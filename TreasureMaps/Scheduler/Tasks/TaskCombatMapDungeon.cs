@@ -36,6 +36,14 @@ internal static class TaskCombatMapDungeon
         {
             if (gameObject != null && !gameObject.IsDead && gameObject.IsTarget())
             {
+                if (gameObject != null && Distance.DistanceToHitboxEdge(gameObject.HitboxRadius, gameObject) > Distance.GetRange() && !Svc.Condition[ConditionFlag.InCombat])
+                {
+                    if (!P.navmesh.PathfindInProgress() && !P.navmesh.IsRunning() && !Movement.IsMoving() && !gameObject.IsDead && Distance.DistanceToHitboxEdge(gameObject.HitboxRadius, gameObject) > Distance.GetRange())
+                    {
+                        P.navmesh.PathfindAndMoveTo(gameObject.Position, false);
+                    }
+                    return false;
+                }
                 if (gameObject != null && Distance.DistanceToHitboxEdge(gameObject.HitboxRadius, gameObject) > Distance.GetRange() && !C.bossModRebornPlugin)
                 {
                     if (!P.navmesh.PathfindInProgress() && !P.navmesh.IsRunning() && !Movement.IsMoving() && !gameObject.IsDead && Distance.DistanceToHitboxEdge(gameObject.HitboxRadius, gameObject) > Distance.GetRange())

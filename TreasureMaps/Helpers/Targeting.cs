@@ -7,6 +7,7 @@ using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using ECommons.GameFunctions;
 using System.Numerics;
 using FFXIVClientStructs.FFXIV.Client.Game.Event;
+using Lumina.Data.Parsing.Layer;
 
 namespace TreasureMaps.Helpers;
 
@@ -277,8 +278,9 @@ public static class Targeting
         var gateExit = Svc.Objects.Where(o =>
         {
             if (o == null || !o.IsTargetable) return false;
-            var postion = new Vector3(o.Position.X, o.Position.Y, o.Position.Z);
+            var position = new Vector3(o.Position.X, o.Position.Y, o.Position.Z);
             var address = (GameObject*)(void*)o.Address;
+            if (Math.Abs(Svc.ClientState.LocalPlayer.Position.Y - position.Y) > 30) return false;
             if (address->ObjectKind != ObjectKind.EventObj) return false;
             if (address->SubKind != 0) return false;
             if (address->NamePlateIconId != 0) return false;

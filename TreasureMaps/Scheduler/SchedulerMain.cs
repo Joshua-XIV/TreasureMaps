@@ -33,6 +33,10 @@ internal static class SchedulerMain
         {
             PluginManager.EnableAutoRotationPlugin();
         }
+        if (C.bossModRebornPlugin)
+        {
+            PluginManager.EnableBossMod();
+        }
         return true;
     }
 
@@ -45,6 +49,10 @@ internal static class SchedulerMain
         if (C.autoRotaion)
         {
             PluginManager.DisableAutoRotationPlugin();
+        }
+        if (C.bossModRebornPlugin)
+        {
+            PluginManager.DisableBossMod();
         }
         return true;
     }
@@ -78,7 +86,7 @@ internal static class SchedulerMain
                             P.taskManager.Enqueue(() => Statuses.PlayerNotBusy());
                             P.taskManager.Enqueue(() =>
                             {
-                                if ((Svc.ClientState.LocalPlayer.Position.Y >= initialPoint.Y - 30 && Svc.ClientState.LocalPlayer.Position.Y <= initialPoint.Y + 30))
+                                if (Math.Abs(Svc.ClientState.LocalPlayer.Position.Y - initialPoint.Y) <= 30)
                                 {
                                     TaskMoveTo.Enqueue(initialPoint, "Start");
                                     TaskGoNextFloor.Enqueue();
