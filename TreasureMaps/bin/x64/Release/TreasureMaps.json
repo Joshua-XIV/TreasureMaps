@@ -7,7 +7,11 @@
   "ApplicableVersion": "any",
   "AssemblyVersion": "0.0.0.1",
   "DalamudApiLevel": 11,
-  "Tags": [ "Maps", "Treasure", "Loot" ],
-  "IconUrl": "",
+  "Tags": [
+    "Maps",
+    "Treasure",
+    "Loot"
+  ],
+  "IconUrl": "https://raw.githubusercontent.com/Joshua-XIV/TreasureMaps/main/TreasureMaps/Assets/money.png",
   "RepoUrl": "https://github.com/Joshua-XIV/TreasureMaps"
 }

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{49582D75-CB80-482E-AC61-8D207E6AA96B}|TreasureMaps\\TreasureMaps.csproj|c:\\users\\bulle\\source\\repos\\treasuremaps\\treasuremaps\\treasuremaps.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{49582D75-CB80-482E-AC61-8D207E6AA96B}|TreasureMaps\\TreasureMaps.csproj|solutionrelative:treasuremaps\\treasuremaps.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{49582D75-CB80-482E-AC61-8D207E6AA96B}|TreasureMaps\\TreasureMaps.csproj|c:\\users\\bulle\\source\\repos\\treasuremaps\\treasuremaps\\treasuremaps.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{49582D75-CB80-482E-AC61-8D207E6AA96B}|TreasureMaps\\TreasureMaps.csproj|solutionrelative:treasuremaps\\treasuremaps.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
@@ -35,6 +39,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TreasureMaps.json",
+              "DocumentMoniker": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\TreasureMaps\\TreasureMaps.json",
+              "RelativeDocumentMoniker": "TreasureMaps\\TreasureMaps.json",
+              "ToolTip": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\TreasureMaps\\TreasureMaps.json*",
+              "RelativeToolTip": "TreasureMaps\\TreasureMaps.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-22T04:43:45.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TreasureMaps",
               "DocumentMoniker": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\TreasureMaps\\TreasureMaps.csproj",
               "RelativeDocumentMoniker": "TreasureMaps\\TreasureMaps.csproj",
@@ -46,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ECommons",
               "DocumentMoniker": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\ECommons\\ECommons\\ECommons.csproj",
               "RelativeDocumentMoniker": "ECommons\\ECommons\\ECommons.csproj",
