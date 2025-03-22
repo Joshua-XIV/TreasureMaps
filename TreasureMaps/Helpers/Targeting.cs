@@ -103,7 +103,7 @@ public static class Targeting
     /// <returns>True if the target is successfully set, otherwise false.</returns>
     public static bool TargetByObject(IGameObject? gameObject)
     {
-        if (Svc.Targets.Target != null && Svc.Targets.Target.Name.ToString() == gameObject.Name.ToString()) return true;
+        if (Svc.Targets.Target != null && Svc.Targets.Target == gameObject) return true;
 
         if (gameObject != null)
         {
