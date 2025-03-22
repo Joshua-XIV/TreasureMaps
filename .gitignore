@@ -7,7 +7,7 @@ v17/
 bin/
 obj/
 
-# Ignore user specific files
+# Ignore user-specific files
 *.user
 *.suo
 *.cache
