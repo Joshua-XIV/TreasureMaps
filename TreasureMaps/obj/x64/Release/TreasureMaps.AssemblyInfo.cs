@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Personal Project for Treasure Maps")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.0.1")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.0.1+de3d93061e25f9765000d20be8e3158335b89233")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.0.1+7d53289b98053235b8df9b68e233c804d5b19896")]
 [assembly: System.Reflection.AssemblyProductAttribute("TreasureMaps")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TreasureMaps")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.0.0.1")]

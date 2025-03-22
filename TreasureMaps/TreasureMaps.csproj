@@ -26,7 +26,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="..\TreasureMaps\TreasureMaps.json">
+		<Content Include="TreasureMaps.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
