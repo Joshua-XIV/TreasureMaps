@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+	<Import Project="Dalamud.Plugin.Bootstrap.targets" />
+
+	<PropertyGroup>
+		<Version>0.0.0.1</Version>
+		<Description>Personal Project for Treasure Maps</Description>
+		<PackageProjectUrl>https://github.com/Joshua-XIV</PackageProjectUrl>
+	    <LangVersion>latest</LangVersion>    
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Platforms>AnyCPU;x64</Platforms>
+		<PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\AutoRetainerAPI\AutoRetainerAPI\AutoRetainerAPI.csproj" />
+		<ProjectReference Include="..\ECommons\ECommons\ECommons.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="TreasureMaps.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="..\TreasureMaps\TreasureMaps.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>
