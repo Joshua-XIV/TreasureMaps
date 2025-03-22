@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿# Ignore Visual Studio and build-related files
+.vs/
+DesignTimeBuild/
+v17/
 
-namespace TreasureMaps
-{
-    class _
-    {
-    }
-}
+# Ignore build output
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.cache
+*.pdb
+
+# Ignore generated files
+*.dll
+*.exe
+*.log
+*.tmp
+*.bak
