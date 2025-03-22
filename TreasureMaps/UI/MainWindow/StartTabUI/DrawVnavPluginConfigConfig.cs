@@ -41,7 +41,7 @@ public class DrawVnavPluginConfigConfig
         }
 
         ImGui.BeginDisabled(!hasVnav);
-        if (ImGui.Checkbox("Do Treasure Dungeons", ref goToTreasure))
+        if (ImGui.Checkbox("Do Treasure Dungeons", ref doDungeon))
         {
             HandleDungeon(hasVnav, ref doDungeon);
         }

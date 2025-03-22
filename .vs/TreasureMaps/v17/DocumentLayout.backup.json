@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{49582D75-CB80-482E-AC61-8D207E6AA96B}|TreasureMaps\\TreasureMaps.csproj|c:\\users\\bulle\\source\\repos\\treasuremaps\\treasuremaps\\assets\\money.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{49582D75-CB80-482E-AC61-8D207E6AA96B}|TreasureMaps\\TreasureMaps.csproj|solutionrelative:treasuremaps\\assets\\money.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{49582D75-CB80-482E-AC61-8D207E6AA96B}|TreasureMaps\\TreasureMaps.csproj|c:\\users\\bulle\\source\\repos\\treasuremaps\\treasuremaps\\treasuremaps.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{49582D75-CB80-482E-AC61-8D207E6AA96B}|TreasureMaps\\TreasureMaps.csproj|solutionrelative:treasuremaps\\treasuremaps.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -39,19 +43,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "money.png",
+              "DocumentMoniker": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\TreasureMaps\\Assets\\money.png",
+              "RelativeDocumentMoniker": "TreasureMaps\\Assets\\money.png",
+              "ToolTip": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\TreasureMaps\\Assets\\money.png",
+              "RelativeToolTip": "TreasureMaps\\Assets\\money.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-03-22T05:32:33.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TreasureMaps.json",
               "DocumentMoniker": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\TreasureMaps\\TreasureMaps.json",
               "RelativeDocumentMoniker": "TreasureMaps\\TreasureMaps.json",
               "ToolTip": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\TreasureMaps\\TreasureMaps.json",
               "RelativeToolTip": "TreasureMaps\\TreasureMaps.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-22T04:43:45.616Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TreasureMaps",
               "DocumentMoniker": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\TreasureMaps\\TreasureMaps.csproj",
               "RelativeDocumentMoniker": "TreasureMaps\\TreasureMaps.csproj",
@@ -63,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ECommons",
               "DocumentMoniker": "C:\\Users\\bulle\\source\\repos\\TreasureMaps\\ECommons\\ECommons\\ECommons.csproj",
               "RelativeDocumentMoniker": "ECommons\\ECommons\\ECommons.csproj",
