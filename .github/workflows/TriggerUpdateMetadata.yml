@@ -11,7 +11,7 @@ jobs:
       - name: Trigger Repository Dispatch Event
         run: |
           curl -X POST \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Authorization: token ${{ secrets.PAT }}" \
           -H "Accept: application/vnd.github.v3+json" \
           --data '{"event_type": "new-release"}' \
           https://api.github.com/repos/Joshua-XIV/MyDalamudPlugin/dispatches
