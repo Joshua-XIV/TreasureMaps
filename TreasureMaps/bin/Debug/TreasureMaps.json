@@ -1,7 +1,7 @@
 ﻿{
   "Author": "Josh",
   "Name": "TreasureMaps",
-  "Punchline": "Automatically teleporsts to where treasure maps are located",
+  "Punchline": "Automatically teleporsts to where treasure maps are located,",
   "Description": "A dalamud plugin for deciphering maps and teleporting to their respective zone. This plugin also offers additionals feautres with automating treasure maps",
   "InternalName": "TreasureMaps",
   "ApplicableVersion": "any",

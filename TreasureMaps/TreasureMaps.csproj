@@ -31,4 +31,8 @@
 		</Content>
 	</ItemGroup>
 
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="if &quot;$(ConfigurationName)&quot; == &quot;Release&quot; powershell -ExecutionPolicy Bypass -Command &quot;&amp; {Compress-Archive -Path '$(TargetDir)*.dll', '$(TargetDir)*.pdb', '$(TargetDir)*.config' -DestinationPath '$(TargetDir)latest.zip' -Force}&quot;" />
+	</Target>
+
 </Project>
