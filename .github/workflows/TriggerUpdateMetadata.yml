@@ -3,6 +3,7 @@ name: Trigger Action on New Release
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
   dispatch:
