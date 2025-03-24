@@ -77,17 +77,33 @@ public static class Distance
         Vector3 closestPortal = default;
         float minDistance = float.MaxValue;
 
-        foreach (var portal in ThiefPortalLocations)
+        // 613 - The Ruby Sea
+        if (Zones.IsInZone(613))
         {
-            float distance = GetDistance2D(flagPosition, portal);
-            if (distance < minDistance)
+            foreach (var portal in ThiefPortalLocationsRubySea)
             {
-                minDistance = distance;
-                closestPortal = portal;
+                float distance = GetDistance2D(flagPosition, portal);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestPortal = portal;
+                }
+            }
+        }
+        else
+        {
+            foreach (var portal in ThiefPortalLocationsLochs)
+            {
+                float distance = GetDistance2D(flagPosition, portal);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestPortal = portal;
+                }
             }
         }
 
-        return closestPortal;
+            return closestPortal;
     }
 
     // Helper method to calculate distance ignoring Y-axis
