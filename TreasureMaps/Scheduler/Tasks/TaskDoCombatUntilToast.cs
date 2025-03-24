@@ -17,7 +17,14 @@ internal static class TaskDoCombatUntilToast
     public static void Enqueue()
     {
         Generic.PluginLogInfo("Doing Treasure Hunt Location");
+        // Ruby Sea - 613
+        // BMR doesn't play well in this zone
+        if (!Zones.IsInZone(613))
+        {
+            P.taskManager.Enqueue(() => PluginManager.EnableBossMod());
+        }
         P.taskManager.Enqueue(() => Toast(), 1000 * 60 * 5, false);
+        P.taskManager.Enqueue(() => PluginManager.EnableBossMod());
     }
 
     internal static string PrintTextToast()

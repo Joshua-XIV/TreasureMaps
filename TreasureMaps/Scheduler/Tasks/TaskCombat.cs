@@ -16,7 +16,10 @@ internal static class TaskCombat
     public static void Enqueue()
     {
         Generic.PluginLogInfo("Doing Combat");
+        P.taskManager.Enqueue(() => PluginManager.EnableBossMod());
         P.taskManager.Enqueue(Combat, 1000 * 60 * 3, false);
+        P.taskManager.Enqueue(() => PluginManager.DisableBossMod());
+
     }
 
     internal unsafe static bool? Combat()

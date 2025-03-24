@@ -16,7 +16,9 @@ internal static class TaskCombatMapDungeon
     public static void Enqueue()
     {
         Generic.PluginLogInfo("Doing Combat");
+        P.taskManager.Enqueue(() => PluginManager.EnableBossMod());
         P.taskManager.Enqueue(Combat, 1000 * 60 * 3, false);
+        P.taskManager.Enqueue(() => PluginManager.DisableBossMod());
     }
 
     public static void Enqueue(string message)

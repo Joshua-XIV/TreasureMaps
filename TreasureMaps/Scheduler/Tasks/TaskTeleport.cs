@@ -15,10 +15,10 @@ internal static class TaskTeleport
 
     internal static unsafe bool? TeleportToAetheryte(uint aetheryteId, uint targetZoneId)
     {
-        if (Zones.Isinzone(targetZoneId) && Statuses.PlayerNotBusy()) return true;
+        if (Zones.IsInZone(targetZoneId) && Statuses.PlayerNotBusy()) return true;
 
         if (!Svc.Condition[ConditionFlag.Casting] && Statuses.PlayerNotBusy() && EzThrottler.Throttle("Teleporting", 300) &&
-            !Svc.Condition[ConditionFlag.BetweenAreas] && !Zones.Isinzone(targetZoneId))
+            !Svc.Condition[ConditionFlag.BetweenAreas] && !Zones.IsInZone(targetZoneId))
         {
             Telepo.Instance()->Teleport(aetheryteId, 0);
             return false;
