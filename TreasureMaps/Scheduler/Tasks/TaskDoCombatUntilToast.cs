@@ -24,7 +24,7 @@ internal static class TaskDoCombatUntilToast
             P.taskManager.Enqueue(() => PluginManager.EnableBossMod());
         }
         P.taskManager.Enqueue(() => Toast(), 1000 * 60 * 5, false);
-        P.taskManager.Enqueue(() => PluginManager.EnableBossMod());
+        P.taskManager.Enqueue(() => PluginManager.DisableBossMod());
     }
 
     internal static string PrintTextToast()
