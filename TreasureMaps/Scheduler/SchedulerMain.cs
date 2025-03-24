@@ -33,10 +33,6 @@ internal static class SchedulerMain
         {
             PluginManager.EnableAutoRotationPlugin();
         }
-        if (C.bossModRebornPlugin)
-        {
-            PluginManager.EnableBossMod();
-        }
         return true;
     }
 
@@ -231,7 +227,13 @@ internal static class SchedulerMain
                     else if (C.enterPortal && C.digMap)
                     {
                         TaskTarget.Enqueue(portal);
-                        TaskMoveTo.Enqueue(portal.Position, portal.Name.ToString());
+                        if (Svc.Condition[ConditionFlag.Diving])
+                        {
+                            P.taskManager.Enqueue(() => Chat.Instance.ExecuteCommand($"/vnav flyto {portal.Position.X} {portal.Position.Y} {portal.Position.Z}"));
+                            TaskFlyTo.Enqueue("Portal");
+                        }
+                        else
+                            TaskMoveTo.Enqueue(portal.Position, portal.Name.ToString());
                         P.taskManager.Enqueue(() => !Movement.IsMoving());
                         TaskInteract.Enqueue(portal);
                         TaskSelectYes.Enqueue();
@@ -285,22 +287,26 @@ internal static class SchedulerMain
                 {
                     TaskSelfRepair.Enqueue();
                 }
-                else if (Inventory.IsMapDeciphered() && Zones.Isinzone(Zones.FlagZoneID()) && Generic.IsPluginInstalled("vnavmesh"))
+                else if (Inventory.IsMapDeciphered() && Zones.IsInZone(Zones.FlagZoneID()) && Generic.IsPluginInstalled("vnavmesh"))
                 {
                     if (P.navmesh.IsReady())
                     {
                         if (C.goToTreasure)
                         {
                             var pointFloor = P.navmesh.PointOnFloor(new(Zones.FlagXCoords(), 1024, Zones.FlagYCoords()), false, 1f);
+                            if (Inventory.GetMapDecipheredId() == 2002260 || Inventory.GetMapDecipheredId() == 2002386)
+                            {
+                                pointFloor = Distance.FindClosestPortal(pointFloor.Value);
+                            }
                             if (Distance.GetDistanceToPlayer(pointFloor) >= 20)
                             {
                                 TaskMount.Enqueue();
                                 TaskJumpFly.Enqueue();
-                                P.taskManager.Enqueue(() => ECommons.Automation.Chat.Instance.ExecuteCommand($"/vnav flyflag"));
+                                P.taskManager.Enqueue(() => ECommons.Automation.Chat.Instance.ExecuteCommand($"/vnav flyto {pointFloor.Value.X} {pointFloor.Value.Y} {pointFloor.Value.Z}"));
                                 TaskFlyTo.Enqueue("Flag");
                                 TaskDisMount.Enqueue();
                             }
-                            else if (Distance.GetDistanceToPlayer(pointFloor) <= 20 && Svc.Condition[ConditionFlag.InFlight])
+                            else if (Distance.GetDistanceToPlayer(pointFloor) <= 20 && Svc.Condition[ConditionFlag.InFlight] && Inventory.GetMapDecipheredId() != 2002260 && Inventory.GetMapDecipheredId() != 2002386)
                             {
                                 P.taskManager.Enqueue(() => P.navmesh.Stop());
                                 TaskDisMount.Enqueue();
@@ -334,7 +340,7 @@ internal static class SchedulerMain
                         TaskNavIsReady.Enqueue();
                     }
                 }
-                else if (Inventory.IsMapDeciphered() && !Zones.Isinzone(Zones.FlagZoneID()))
+                else if (Inventory.IsMapDeciphered() && !Zones.IsInZone(Zones.FlagZoneID()))
                 {
                     TaskOpenDecipheredMap.Enqueue(Inventory.GetMapDecipheredId());
                     TaskTeleport.Enqueue(Zones.GetClosestAetheryte(), Zones.FlagZoneID());

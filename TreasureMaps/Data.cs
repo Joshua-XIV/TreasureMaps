@@ -50,6 +50,12 @@ public static class Data
         { 1209, new Vector3(0,0,0)}
     };
 
+    public static readonly List<Vector3> ThiefPortalLocations = new List<Vector3>
+    {
+        new Vector3(-125.95223f, -193.75761f, -155.86938f),
+        new Vector3(634.3f, -103.104f, 440.39197f)
+    };
+
     public static readonly Dictionary<uint, string> DecipheredTreasureMapIds = new Dictionary<uint, string>
     {
         { 2001087, "Leather Treasure Map" },

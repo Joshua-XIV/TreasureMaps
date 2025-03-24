@@ -71,4 +71,30 @@ public static class Distance
         }
         return range;
     }
+
+    public static Vector3 FindClosestPortal(Vector3 flagPosition)
+    {
+        Vector3 closestPortal = default;
+        float minDistance = float.MaxValue;
+
+        foreach (var portal in ThiefPortalLocations)
+        {
+            float distance = GetDistance2D(flagPosition, portal);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestPortal = portal;
+            }
+        }
+
+        return closestPortal;
+    }
+
+    // Helper method to calculate distance ignoring Y-axis
+    public static float GetDistance2D(Vector3 pos1, Vector3 pos2)
+    {
+        float deltaX = pos1.X - pos2.X;
+        float deltaZ = pos1.Z - pos2.Z;
+        return MathF.Sqrt(deltaX * deltaX + deltaZ * deltaZ);
+    }
 }
