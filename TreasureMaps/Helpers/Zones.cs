@@ -6,7 +6,7 @@ namespace TreasureMaps.Helpers;
 
 public unsafe static class Zones
 {
-    public static bool Isinzone(uint zoneID) => Svc.ClientState.TerritoryType == zoneID;
+    public static bool IsInZone(uint zoneID) => Svc.ClientState.TerritoryType == zoneID;
 
     public static string GetZoneName(uint zoneID) => GetRow<TerritoryType>(zoneID)!.Value.PlaceName.Value.Name.ToString();
 
