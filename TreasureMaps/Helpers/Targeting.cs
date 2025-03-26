@@ -44,7 +44,7 @@ public static class Targeting
             var address = (GameObject*)(void*)x.Address;
             if (address->ObjectKind != ObjectKind.BattleNpc) return false;
             if (address->SubKind != 5) return false;
-            if (address->EventId.ContentId != EventHandlerType.TreasureHuntDirector) return false;
+            if (address->EventId.ContentId != EventHandlerContent.TreasureHuntDirector) return false;
             if (address->NamePlateIconId != 60094 && address->NamePlateIconId != 60096) return false;
             return true;
         });
@@ -150,7 +150,7 @@ public static class Targeting
             var postion = new Vector3(o.Position.X, o.Position.Y, o.Position.Z);
             var address = (GameObject*)(void*)o.Address;
             if (address->ObjectKind != ObjectKind.Treasure) return false;
-            if (address->EventId.ContentId != EventHandlerType.TreasureHuntDirector) return false;
+            if (address->EventId.ContentId != EventHandlerContent.TreasureHuntDirector) return false;
             return true;
         });
 
@@ -176,7 +176,7 @@ public static class Targeting
             var postion = new Vector3(o.Position.X, o.Position.Y, o.Position.Z);
             var address = (GameObject*)(void*)o.Address;
             if (address->ObjectKind != ObjectKind.EventObj) return false;
-            if (address->EventId.ContentId != EventHandlerType.InstanceContentDirector) return false;
+            if (address->EventId.ContentId != EventHandlerContent.TreasureHuntDirector) return false;
             return true;
         });
 
@@ -227,7 +227,7 @@ public static class Targeting
             var postion = new Vector3(o.Position.X, o.Position.Y, o.Position.Z);
             var address = (GameObject*)(void*)o.Address;
             if (address->ObjectKind != ObjectKind.EventObj) return false;
-            if (address->EventId.ContentId != EventHandlerType.TreasureHuntDirector) return false;
+            if (address->EventId.ContentId != EventHandlerContent.TreasureHuntDirector) return false;
             return true;
         });
 

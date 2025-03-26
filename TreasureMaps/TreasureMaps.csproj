@@ -3,11 +3,11 @@
 	<Import Project="Dalamud.Plugin.Bootstrap.targets" />
 
 	<PropertyGroup>
-		<Version>0.0.0.4</Version>
+		<Version>0.0.0.5</Version>
 		<Description>Personal Project for Treasure Maps</Description>
 		<PackageProjectUrl>https://github.com/Joshua-XIV</PackageProjectUrl>
-	    <LangVersion>latest</LangVersion>    
-        <TargetFramework>net8.0-windows</TargetFramework>
+	    <LangVersion>preview</LangVersion>    
+        <TargetFramework>net9.0-windows</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Platforms>AnyCPU;x64</Platforms>
@@ -29,6 +29,16 @@
 		<Content Include="TreasureMaps.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="InteropGenerator.Runtime">
+			<HintPath>$(DALAMUD_HOME)\InteropGenerator.Runtime.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="DalamudPackager" Version="12.0.0" />
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

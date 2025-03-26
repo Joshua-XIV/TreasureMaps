@@ -169,8 +169,10 @@ internal class Generic
             var secondButtonNode = firstButtonNode->PrevSiblingNode;
             var firstText = firstButtonNode->GetAsAtkComponentButton()->GetTextNodeById(5)->GetAsAtkTextNode()->NodeText;
             var secondText = secondButtonNode->GetAsAtkComponentButton()->GetTextNodeById(5)->GetAsAtkTextNode()->NodeText;
-            byte firstValue = *firstText.StringPtr;
-            byte secondValue = *secondText.StringPtr;
+            string firstString = firstText.StringPtr.ToString();
+            string secondString = secondText.StringPtr.ToString();
+            byte firstValue = (byte)firstString[0];
+            byte secondValue = (byte)secondString[0];
             if (firstValue != 0)
             {
                 key = firstValue;

@@ -5,8 +5,8 @@
   "Description": "A dalamud plugin for deciphering maps and teleporting to their respective zone. This plugin also offers additionals feautres with automating treasure maps",
   "InternalName": "TreasureMaps",
   "ApplicableVersion": "any",
-  "AssemblyVersion": "0.0.0.4",
-  "DalamudApiLevel": 11,
+  "AssemblyVersion": "0.0.0.5",
+  "DalamudApiLevel": 12,
   "Tags": [
     "Maps",
     "Treasure",

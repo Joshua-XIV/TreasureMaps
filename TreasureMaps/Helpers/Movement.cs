@@ -8,5 +8,5 @@ public unsafe class Movement
     /// Checks if the player is currently moving.
     /// </summary>
     /// <returns>True if the player is moving, otherwise false.</returns>
-    public static unsafe bool IsMoving() => AgentMap.Instance()->IsPlayerMoving == 1;
+    public static unsafe bool IsMoving() => AgentMap.Instance()->IsPlayerMoving;
 }

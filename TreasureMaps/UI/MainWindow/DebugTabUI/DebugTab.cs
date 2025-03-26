@@ -46,7 +46,7 @@ internal class DebugTab
                 txt3 = $"Sub Kind = {address->SubKind.ToString()}";
                 txt4 = $"Nameplate Icon ID = {address->NamePlateIconId.ToString()}";
                 txt5 = $"Content Id = {(ushort)address->EventId.ContentId}";
-                var Event = EventHandlerType.TreasureHuntDirector;
+                var Event = EventHandlerContent.TreasureHuntDirector;
             }
         }
         ImGui.Text(txt);
