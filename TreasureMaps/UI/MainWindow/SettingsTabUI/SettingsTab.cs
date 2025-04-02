@@ -47,13 +47,6 @@ internal class SettingsTab
             C.Save();
         }
 
-        if (ImGui.Button("Get Walk Forward Key"))
-        {
-            P.taskManager.Enqueue(() => Generic.OpenKeyBindSettings());
-            P.taskManager.DelayNext(100);
-            P.taskManager.Enqueue(() => C.SetWalkForward(Generic.GetWalkForwardKeyBind()));
-        }
-
         ImGuiComponents.HelpMarker("First time running this plugin should automatically get this key\n" +
                                    "If not, you can use this to set the key, or if your keybinds change");
 

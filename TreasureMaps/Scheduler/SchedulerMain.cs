@@ -14,10 +14,7 @@ namespace TreasureMaps.Scheduler;
 
 internal static class SchedulerMain
 {
-    private static bool isFirstLoad = C.isFirstLoad;
     private static bool startDungeon = true;
-    private static bool firstAgain = true;
-    private static bool inside = false;
     internal static bool runPluginInternal;
     internal static bool runPlugin
     {
@@ -59,17 +56,6 @@ internal static class SchedulerMain
         {
             if (!P.taskManager.IsBusy)
             {
-                if (isFirstLoad)
-                {
-                    C.isFirstLoad = false;
-                    isFirstLoad = false;
-                    P.taskManager.Enqueue(() => Generic.OpenKeyBindSettings());
-                    P.taskManager.DelayNext(100);
-                    P.taskManager.Enqueue(() => C.SetWalkForward(Generic.GetWalkForwardKeyBind()));
-                    P.taskManager.DelayNext(100);
-                    P.taskManager.Enqueue(() => Chat.Instance.SendMessage("/keybind"));
-                    P.taskManager.DelayNext(1000);
-                }
                 if (Zones.IsInNormalTreasureDungeon())
                 {
                     if (C.doDungeon)
@@ -77,7 +63,6 @@ internal static class SchedulerMain
                         if (startDungeon)
                         {
                             startDungeon = false;
-                            inside = true;
                             var initialPoint = InitialTreasureDungeonPosition.GetValueOrDefault(Zones.CurrentZoneId());
                             P.taskManager.Enqueue(() => Statuses.PlayerNotBusy());
                             P.taskManager.Enqueue(() =>

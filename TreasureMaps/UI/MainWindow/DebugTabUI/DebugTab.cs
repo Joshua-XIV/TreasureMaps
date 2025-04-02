@@ -19,11 +19,16 @@ namespace TreasureMaps.UI.MainWindow.DebugTabUI;
 
 internal class DebugTab
 {
+    
     private static string txt = "";
     private static string txt2 = "";
     private static string txt3 = "";
     private static string txt4 = "";
     private static string txt5 = "";
+    private static string txt6 = "";
+    private static string txt7 = "";
+    private static string txt8 = "";
+    private static string txt9 = "";
     private static string lastToast = "";
     private static string key = "";
     private static string toDoText = "";
@@ -46,6 +51,11 @@ internal class DebugTab
                 txt3 = $"Sub Kind = {address->SubKind.ToString()}";
                 txt4 = $"Nameplate Icon ID = {address->NamePlateIconId.ToString()}";
                 txt5 = $"Content Id = {(ushort)address->EventId.ContentId}";
+                txt6 = $"Entity Id = {address->EntityId}";
+                txt7 = $"Base Id = {address->BaseId}";
+                txt8 = $"Owner Id = {address->OwnerId}";
+                txt9 = $"Game Object Id = {address->GetGameObjectId().ObjectId}";
+
                 var Event = EventHandlerContent.TreasureHuntDirector;
             }
         }
@@ -54,6 +64,10 @@ internal class DebugTab
         ImGui.Text(txt3);
         ImGui.Text(txt4);
         ImGui.Text(txt5);
+        ImGui.Text(txt6);
+        ImGui.Text(txt7);
+        ImGui.Text(txt8);
+        ImGui.Text(txt9);
 
         if (ImGui.Button("Get Last Toast"))
         {
@@ -77,24 +91,6 @@ internal class DebugTab
         {
             ImGui.Text("No valid map point.");
         }
-
-        if (ImGui.Button("Keybind"))
-        {
-            P.taskManager.Enqueue(() => Generic.OpenKeyBindSettings());
-            P.taskManager.Enqueue(() =>
-            {
-                if (Generic.GetWalkForwardKeyBind() != 0) // Assuming it returns a bool
-                {
-                    key = $"{Generic.GetWalkForwardKeyBind()}"; // Assign the keyValue to key
-                }
-                else
-                {
-                    key = "Not Found"; // Handle failure case if needed
-                }
-            });
-        }
-        ImGui.Text(key);
-
 
         if (ImGui.Button("Get last _ToDo text##text"))
         {

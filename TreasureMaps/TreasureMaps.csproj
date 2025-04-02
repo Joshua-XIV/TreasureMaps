@@ -26,12 +26,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="TreasureMaps.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-	</ItemGroup>
-
-	<ItemGroup>
 		<Reference Include="InteropGenerator.Runtime">
 			<HintPath>$(DALAMUD_HOME)\InteropGenerator.Runtime.dll</HintPath>
 		</Reference>

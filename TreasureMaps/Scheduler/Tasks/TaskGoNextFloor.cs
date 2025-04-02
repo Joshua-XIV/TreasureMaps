@@ -19,7 +19,7 @@ internal static class TaskGoNextFloor
     {
         if (Svc.Condition[ConditionFlag.Jumping61] || Svc.Condition[ConditionFlag.Jumping])
         {
-            WindowsKeypress.SendKeyRelease((VirtualKey)C.walkForwardKey, null);
+            Chat.Instance.ExecuteCommand($"/automove off");
             return true;
         }
         else if (Movement.IsMoving())
@@ -28,7 +28,7 @@ internal static class TaskGoNextFloor
         }
         else
         {
-            WindowsKeypress.SendKeyHold((VirtualKey)C.walkForwardKey, null);
+            Chat.Instance.ExecuteCommand($"/automove on");
         }
         return false;
     }
