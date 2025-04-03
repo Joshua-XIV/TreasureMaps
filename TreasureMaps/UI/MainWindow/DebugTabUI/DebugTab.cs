@@ -68,7 +68,13 @@ internal class DebugTab
         ImGui.Text(txt7);
         ImGui.Text(txt8);
         ImGui.Text(txt9);
-
+        if (ImGui.Button("Aethernet Test String Select"))
+        {
+            if (TryGetAddonByName<AtkUnitBase>("SelectString", out var addon))
+            {
+                Callback.Fire(addon, true, 0);
+            }
+        }
         if (ImGui.Button("Get Last Toast"))
         {
             if (P.toast.GetLastToast() != null)
