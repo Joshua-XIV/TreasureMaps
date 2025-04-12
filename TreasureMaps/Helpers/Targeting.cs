@@ -176,7 +176,7 @@ public static class Targeting
             var postion = new Vector3(o.Position.X, o.Position.Y, o.Position.Z);
             var address = (GameObject*)(void*)o.Address;
             if (address->ObjectKind != ObjectKind.EventObj) return false;
-            if (address->EventId.ContentId != EventHandlerContent.TreasureHuntDirector) return false;
+            if (address->EventId.ContentId != EventHandlerContent.InstanceContentDirector) return false;
             return true;
         });
 
