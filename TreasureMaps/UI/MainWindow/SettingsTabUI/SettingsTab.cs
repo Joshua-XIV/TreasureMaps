@@ -47,11 +47,6 @@ internal class SettingsTab
             C.Save();
         }
 
-        ImGuiComponents.HelpMarker("First time running this plugin should automatically get this key\n" +
-                                   "If not, you can use this to set the key, or if your keybinds change");
-
-        ImGui.Text($"Current Walk Forward Key: {(C.walkForwardKey == 0 ? "null" : ((char)C.walkForwardKey).ToString())}");
-
         if (ImGui.Checkbox("Enable Debug", ref DEBUG))
         {
             C.DEBUG = DEBUG;

@@ -22,9 +22,6 @@ public class Config : IEzConfig
     public bool enterPortal { get; set; } = false;
     public bool doDungeon { get; set; } = false;
 
-    // Key Config
-    public byte walkForwardKey { get; set; } = 0;
-
     // Rotation and AI Config
     public bool autoRotaion { get; set; } = false;
     public bool bossModRebornPlugin { get; set; } = false;
@@ -38,12 +35,6 @@ public class Config : IEzConfig
     public bool isFirstLoad { get; set; } = true;
     public bool disableWarning { get; set; } = false;
     public bool DEBUG { get; set; } = false;
-
-    // Set Key
-    public void SetWalkForward(byte key)
-    {
-        walkForwardKey = key;
-    }
 
     public class BattleTalkPattern
     {
