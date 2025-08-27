@@ -11,6 +11,53 @@ public static class Data
     public static string portalSpawnToast = "A portal has appeared.";
     public static string arcaneSphere = "Arcane Sphere";
 
+    public static readonly Dictionary<int, List<Vector3>> ThiefPortalLocationsByZone = new Dictionary<int, List<Vector3>>
+    {
+        // The Fringes (Zone ID 612)
+        [612] = new List<Vector3>(),
+
+        // The Peaks (Zone ID 620)
+        [620] = new List<Vector3>(),
+
+        // The Ruby Sea (Zone ID 613)
+        [613] = new List<Vector3>
+        {
+            new Vector3(-125.95223f, -193.75761f, -155.86938f),
+            new Vector3(634.3f, -103.104f, 440.39197f),
+            new Vector3(189.33f, -113.737f, 68.604f),
+            new Vector3(356.479f, -76.091f, -337.15576f),
+            new Vector3(651.501f, -103.16853f, -441.0898f),
+            new Vector3(-208.7133f, -152.007f, 210.748f)
+        },
+
+        // The Lochs (Zone ID 621)
+        [621] = new List<Vector3>
+        {
+            new Vector3(103.459f, -343.743f, 207.728f),
+            new Vector3(-217.884f, -278.7037f, -113.845f),
+            //new Vector3(-34.17f, -250.578f, -12.784f),
+            new Vector3(34.17f, -250.578f, -13.064f),
+            new Vector3(-.949f, -282.524f, -282.9798f),
+        },
+
+        // The Azim Steppe (Zone ID 622)
+        [622] = new List<Vector3>
+        {
+            new Vector3(-1.23f, -30.732685f, 194.7623f),
+            new Vector3(-129.89f, -38.3564f, 107.4875f),
+        },
+
+        // Yanxia (Zone ID 614)
+        [614] = new List<Vector3>
+        {
+            new Vector3(-475.551f, -111.47604f, -614.212f),
+            //new Vector3(-44.772f, -48.647f, -677.6176f),
+            new Vector3(44.772f, -48.647f, 677.6176f),
+            new Vector3(-662.736f, -85.444f, -240.556f),
+            new Vector3(-613.82f, -90.088f, 577.604f),
+        },
+    };
+
     public static readonly List<string> TreasureHuntExamineCofferText = new List<string>
     {
         "Examine the treasure coffer!",
@@ -42,12 +89,12 @@ public static class Data
 
     public static readonly Dictionary<uint, Vector3> InitialTreasureDungeonPosition = new Dictionary<uint, Vector3>
     {
-        { 558,  new Vector3(0,0,0)},    // Need to find these locations or just always move forward after entering instance?
-        { 712,  new Vector3(-.07466215f, 149.99988f, 391.83997f)},
-        { 725,  new Vector3(-.07466215f, 149.99988f, 391.83997f)},
-        { 879,  new Vector3(0,0,0)},
-        { 1000, new Vector3(0,0,0)},
-        { 1209, new Vector3(0,0,0)}
+        { 558,  new Vector3(0,0,0)},                               // Aquapolis
+        { 712,  new Vector3(-.07466215f, 149.99988f, 391.83997f)}, // Lost Canals
+        { 725,  new Vector3(-.07466215f, 149.99988f, 391.83997f)}, // Hidden Canals
+        { 879,  new Vector3(0,0,0)},                               // Lyhe Ghiah
+        { 1000, new Vector3(0,0,0)},                               // Excitatron
+        { 1209, new Vector3(0,0,0)}                                // Cenote
     };
 
     // Need to find more spots later
@@ -60,6 +107,16 @@ public static class Data
     public static readonly List<Vector3> ThiefPortalLocationsLochs = new List<Vector3>
     {
         new Vector3(103.459f, -343.743f, 207.728f),
+    };
+
+    public static readonly List<Vector3> ThiefPortalLocationsAzim = new List<Vector3>
+    {
+        new Vector3(-1.23f, -30.732685f, 194.7623f),
+    };
+
+    public static readonly List<Vector3> ThiefPortalLocationsYanxia = new List<Vector3>
+    {
+        new Vector3(-1.23f, -30.732685f, 194.7623f),
     };
 
     public static readonly Dictionary<uint, string> DecipheredTreasureMapIds = new Dictionary<uint, string>
