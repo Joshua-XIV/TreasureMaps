@@ -21,7 +21,7 @@ internal static class TaskJumpFly
 
     internal unsafe static bool? JumpFly()
     {
-        if (Svc.Condition[ConditionFlag.InFlight] && Svc.Condition[ConditionFlag.Mounted] && Statuses.PlayerNotBusy()) return true;
+        if ((Svc.Condition[ConditionFlag.InFlight] || Svc.Condition[ConditionFlag.Diving]) && Svc.Condition[ConditionFlag.Mounted] && Statuses.PlayerNotBusy()) return true;
 
         if (!Svc.Condition[ConditionFlag.InFlight] && Svc.Condition[ConditionFlag.Mounted] && Statuses.PlayerNotBusy())
         {

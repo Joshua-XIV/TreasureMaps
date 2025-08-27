@@ -39,7 +39,8 @@ internal class Generic
     /// <param name="message">The debug message to log.</param>
     internal static void PluginDebugInfo(string message)
     {
-        P.taskManager.Enqueue(() => PluginLog.Debug(message));
+        if (C.DEBUG)
+            P.taskManager.Enqueue(() => PluginLog.Debug(message));
     }
 
     /// <summary>
